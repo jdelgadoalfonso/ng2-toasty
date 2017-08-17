@@ -18,11 +18,11 @@ import { isString, isNumber, isFunction } from './toasty.utils';
 var ToastOptions = (function () {
     function ToastOptions() {
     }
+    ToastOptions = __decorate([
+        Injectable()
+    ], ToastOptions);
     return ToastOptions;
 }());
-ToastOptions = __decorate([
-    Injectable()
-], ToastOptions);
 export { ToastOptions };
 /**
  * Structrure of Toast
@@ -30,11 +30,11 @@ export { ToastOptions };
 var ToastData = (function () {
     function ToastData() {
     }
+    ToastData = __decorate([
+        Injectable()
+    ], ToastData);
     return ToastData;
 }());
-ToastData = __decorate([
-    Injectable()
-], ToastData);
 export { ToastData };
 /**
  * Default configuration foa all toats and toasty container
@@ -54,11 +54,11 @@ var ToastyConfig = (function () {
         // default, material or bootstrap
         this.theme = 'default';
     }
+    ToastyConfig = __decorate([
+        Injectable()
+    ], ToastyConfig);
     return ToastyConfig;
 }());
-ToastyConfig = __decorate([
-    Injectable()
-], ToastyConfig);
 export { ToastyConfig };
 export function toastyServiceFactory(config) {
     return new ToastyService(config);
@@ -66,7 +66,7 @@ export function toastyServiceFactory(config) {
 /**
  * Toasty service helps create different kinds of Toasts
  */
-var ToastyService = ToastyService_1 = (function () {
+var ToastyService = (function () {
     function ToastyService(config) {
         this.config = config;
         // Init the counter
@@ -76,6 +76,7 @@ var ToastyService = ToastyService_1 = (function () {
         // Clear event emitter
         this.clearEmitter = new EventEmitter();
     }
+    ToastyService_1 = ToastyService;
     /**
      * Get list of toats
      */
@@ -196,13 +197,13 @@ var ToastyService = ToastyService_1 = (function () {
             return true;
         }
     };
+    // Allowed THEMES
+    ToastyService.THEMES = ['default', 'material', 'bootstrap'];
+    ToastyService = ToastyService_1 = __decorate([
+        Injectable(),
+        __metadata("design:paramtypes", [ToastyConfig])
+    ], ToastyService);
     return ToastyService;
+    var ToastyService_1;
 }());
-// Allowed THEMES
-ToastyService.THEMES = ['default', 'material', 'bootstrap'];
-ToastyService = ToastyService_1 = __decorate([
-    Injectable(),
-    __metadata("design:paramtypes", [ToastyConfig])
-], ToastyService);
 export { ToastyService };
-var ToastyService_1;

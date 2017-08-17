@@ -16,7 +16,7 @@ import { ToastyService, ToastyConfig } from './toasty.service';
 /**
  * Toasty is container for Toast components
  */
-var ToastyComponent = ToastyComponent_1 = (function () {
+var ToastyComponent = (function () {
     function ToastyComponent(config, toastyService) {
         this.config = config;
         this.toastyService = toastyService;
@@ -26,6 +26,7 @@ var ToastyComponent = ToastyComponent_1 = (function () {
         // Initialise position
         this.position = '';
     }
+    ToastyComponent_1 = ToastyComponent;
     Object.defineProperty(ToastyComponent.prototype, "position", {
         get: function () {
             return this._position;
@@ -142,23 +143,23 @@ var ToastyComponent = ToastyComponent_1 = (function () {
             _this.clear(toast.id);
         }, toast.timeout);
     };
+    /**
+     * Set of constants defins position of Toasty on the page.
+     */
+    ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
+    __decorate([
+        Input(),
+        __metadata("design:type", String),
+        __metadata("design:paramtypes", [String])
+    ], ToastyComponent.prototype, "position", null);
+    ToastyComponent = ToastyComponent_1 = __decorate([
+        Component({
+            selector: 'ng2-toasty',
+            template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
+        }),
+        __metadata("design:paramtypes", [ToastyConfig, ToastyService])
+    ], ToastyComponent);
     return ToastyComponent;
+    var ToastyComponent_1;
 }());
-/**
- * Set of constants defins position of Toasty on the page.
- */
-ToastyComponent.POSITIONS = ['bottom-right', 'bottom-left', 'top-right', 'top-left', 'top-center', 'bottom-center', 'center-center'];
-__decorate([
-    Input(),
-    __metadata("design:type", String),
-    __metadata("design:paramtypes", [String])
-], ToastyComponent.prototype, "position", null);
-ToastyComponent = ToastyComponent_1 = __decorate([
-    Component({
-        selector: 'ng2-toasty',
-        template: "\n    <div id=\"toasty\" [ngClass]=\"[position]\">\n      <ng2-toast *ngFor=\"let toast of toasts\" [toast]=\"toast\" (closeToast)=\"closeToast(toast)\"></ng2-toast>\n    </div>"
-    }),
-    __metadata("design:paramtypes", [ToastyConfig, ToastyService])
-], ToastyComponent);
 export { ToastyComponent };
-var ToastyComponent_1;

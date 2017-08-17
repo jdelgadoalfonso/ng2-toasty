@@ -27,20 +27,20 @@ var ToastComponent = (function () {
         $event.preventDefault();
         this.closeToastEvent.next(this.toast);
     };
+    __decorate([
+        Input(),
+        __metadata("design:type", ToastData)
+    ], ToastComponent.prototype, "toast", void 0);
+    __decorate([
+        Output('closeToast'),
+        __metadata("design:type", Object)
+    ], ToastComponent.prototype, "closeToastEvent", void 0);
+    ToastComponent = __decorate([
+        Component({
+            selector: 'ng2-toast',
+            template: "\n    <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n      <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n      <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n        <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n        <br *ngIf=\"toast.title && toast.msg\" />\n        <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n      </div>\n    </div>"
+        })
+    ], ToastComponent);
     return ToastComponent;
 }());
-__decorate([
-    Input(),
-    __metadata("design:type", ToastData)
-], ToastComponent.prototype, "toast", void 0);
-__decorate([
-    Output('closeToast'),
-    __metadata("design:type", Object)
-], ToastComponent.prototype, "closeToastEvent", void 0);
-ToastComponent = __decorate([
-    Component({
-        selector: 'ng2-toast',
-        template: "\n    <div class=\"toast\" [ngClass]=\"[toast.type, toast.theme]\">\n      <div *ngIf=\"toast.showClose\" class=\"close-button\" (click)=\"close($event)\"></div>\n      <div *ngIf=\"toast.title || toast.msg\" class=\"toast-text\">\n        <span *ngIf=\"toast.title\" class=\"toast-title\">{{toast.title}}</span>\n        <br *ngIf=\"toast.title && toast.msg\" />\n        <span *ngIf=\"toast.msg\" class=\"toast-msg\">{{toast.msg}}</span>\n      </div>\n    </div>"
-    })
-], ToastComponent);
 export { ToastComponent };

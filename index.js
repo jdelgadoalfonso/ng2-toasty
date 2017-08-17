@@ -18,24 +18,25 @@ export var providers = [
     ToastyConfig,
     { provide: ToastyService, useFactory: toastyServiceFactory, deps: [ToastyConfig] }
 ];
-var ToastyModule = ToastyModule_1 = (function () {
+var ToastyModule = (function () {
     function ToastyModule() {
     }
+    ToastyModule_1 = ToastyModule;
     ToastyModule.forRoot = function () {
         return {
             ngModule: ToastyModule_1,
             providers: providers
         };
     };
+    ToastyModule = ToastyModule_1 = __decorate([
+        NgModule({
+            imports: [CommonModule],
+            declarations: [ToastComponent, ToastyComponent],
+            exports: [ToastComponent, ToastyComponent],
+            providers: providers
+        })
+    ], ToastyModule);
     return ToastyModule;
+    var ToastyModule_1;
 }());
-ToastyModule = ToastyModule_1 = __decorate([
-    NgModule({
-        imports: [CommonModule],
-        declarations: [ToastComponent, ToastyComponent],
-        exports: [ToastComponent, ToastyComponent],
-        providers: providers
-    })
-], ToastyModule);
 export { ToastyModule };
-var ToastyModule_1;
