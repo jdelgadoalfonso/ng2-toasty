@@ -16,7 +16,7 @@ import { ToastyService, ToastyConfig } from './toasty.service';
 /**
  * Toasty is container for Toast components
  */
-var ToastyComponent = (function () {
+var ToastyComponent = /** @class */ (function () {
     function ToastyComponent(config, toastyService) {
         this.config = config;
         this.toastyService = toastyService;

@@ -18,7 +18,7 @@ export var providers = [
     ToastyConfig,
     { provide: ToastyService, useFactory: toastyServiceFactory, deps: [ToastyConfig] }
 ];
-var ToastyModule = (function () {
+var ToastyModule = /** @class */ (function () {
     function ToastyModule() {
     }
     ToastyModule_1 = ToastyModule;

@@ -15,7 +15,7 @@ import { ToastData } from './toasty.service';
 /**
  * A Toast component shows message with title and close button.
  */
-var ToastComponent = (function () {
+var ToastComponent = /** @class */ (function () {
     function ToastComponent() {
         this.closeToastEvent = new EventEmitter();
     }

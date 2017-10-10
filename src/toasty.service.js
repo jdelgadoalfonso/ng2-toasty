@@ -15,7 +15,7 @@ import { isString, isNumber, isFunction } from './toasty.utils';
 /**
  * Options to configure specific Toast
  */
-var ToastOptions = (function () {
+var ToastOptions = /** @class */ (function () {
     function ToastOptions() {
     }
     ToastOptions = __decorate([
@@ -27,7 +27,7 @@ export { ToastOptions };
 /**
  * Structrure of Toast
  */
-var ToastData = (function () {
+var ToastData = /** @class */ (function () {
     function ToastData() {
     }
     ToastData = __decorate([
@@ -39,7 +39,7 @@ export { ToastData };
 /**
  * Default configuration foa all toats and toasty container
  */
-var ToastyConfig = (function () {
+var ToastyConfig = /** @class */ (function () {
     function ToastyConfig() {
         // Maximum number of toasties to show at once
         this.limit = 5;
@@ -66,7 +66,7 @@ export function toastyServiceFactory(config) {
 /**
  * Toasty service helps create different kinds of Toasts
  */
-var ToastyService = (function () {
+var ToastyService = /** @class */ (function () {
     function ToastyService(config) {
         this.config = config;
         // Init the counter
